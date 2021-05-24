@@ -1,15 +1,15 @@
 # yalens
 
-Simple immutable lenses with Typescript support.
+Typed immutable lenses.
 
 ## Motivation
 
-Make functional, immutable updates of nested values of objects as simple as imperative, mutable updates:
+Make a immutable update of a nested value as simple as a mutable update:
 
 ```typescript
-// Imperative, update in-place.
+// Imperative: update in-place:
 person.address.city.name = "Paris";
 
-// Functional, immutable update, with auto-complete.
+// Functional: immutable update, return a new object. With auto-complete support:
 const newPerson = on(person).address.city.name._.set("Paris");
 ```

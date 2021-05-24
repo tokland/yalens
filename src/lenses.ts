@@ -28,9 +28,9 @@ type Props<From, To, FnsT extends FnsType> = IsObject<To> extends true
     ? ObjectProps<From, To, FnsT>
     : {};
 
-type Lens<From, To, FnsT extends FnsType> = Props<From, To, FnsT> & {
-    _: GetFns<From, To, FnsT>;
-};
+type InternalProps<From, To, FnsT extends FnsType> = { _: GetFns<From, To, FnsT> };
+
+type Lens<From, To, FnsT extends FnsType> = Props<From, To, FnsT> & InternalProps<From, To, FnsT>;
 
 type FreeLens<From, To> = Lens<From, To, "free">;
 
