@@ -1,60 +1,60 @@
 {
-  "name": "yalens",
-  "version": "1.0.0",
-  "description": "Ergonomic lenses with Typescript support",
-  "main": "dist/yalens.js",
-  "umd:main": "dist/yalens.umd.js",
-  "module": "dist/yalens.mjs",
-  "files": [
-    "dist",
-    "readme.md"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "@types/jest": "^26.0.14",
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
-    "@typescript-eslint/parser": "^4.1.1",
-    "eslint": "^7.9.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-formatter-pretty": "^4.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^24.0.2",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-unicorn": "^32.0.1",
-    "jest": "^26.4.2",
-    "microbundle": "^0.13.0",
-    "prettier": "^2.0.4",
-    "ts-jest": "^26.3.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.0.3"
-  },
-  "scripts": {
-    "build": "microbundle -o dist/ --sourcemap false --compress false",
-    "dev": "microbundle watch -o dist/ --sourcemap false --compress false",
-    "test": "jest --coverage",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tokland/yalens"
-  },
-  "keywords": [],
-  "jest": {
-    "testEnvironment": "node",
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "dist",
-      "coverage"
+    "name": "yalens",
+    "version": "1.0.0",
+    "description": "Simple immutable lenses with Typescript support",
+    "main": "dist/yalens.js",
+    "umd:main": "dist/yalens.umd.js",
+    "module": "dist/yalens.mjs",
+    "files": [
+        "dist",
+        "readme.md"
     ],
-    "transform": {
-      "^.+\\.ts?$": "ts-jest"
-    }
-  },
-  "author": "Arnau Sanchez",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tokland/yalens/issues"
-  },
-  "homepage": "https://github.com/tokland/yalens#readme"
+    "dependencies": {},
+    "devDependencies": {
+        "@types/jest": "^26.0.14",
+        "@typescript-eslint/eslint-plugin": "^4.1.1",
+        "@typescript-eslint/parser": "^4.1.1",
+        "eslint": "^7.9.0",
+        "eslint-config-airbnb-typescript": "^12.3.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-formatter-pretty": "^4.0.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-jest": "^24.0.2",
+        "eslint-plugin-promise": "^5.1.0",
+        "eslint-plugin-unicorn": "^32.0.1",
+        "jest": "^26.4.2",
+        "microbundle": "^0.13.0",
+        "prettier": "^2.0.4",
+        "ts-jest": "^26.3.0",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.0.3"
+    },
+    "scripts": {
+        "build": "microbundle -o dist/ --sourcemap false --compress false",
+        "dev": "microbundle watch -o dist/ --sourcemap false --compress false",
+        "test": "jest --coverage",
+        "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tokland/yalens"
+    },
+    "keywords": [],
+    "jest": {
+        "testEnvironment": "node",
+        "testPathIgnorePatterns": [
+            "node_modules",
+            "dist",
+            "coverage"
+        ],
+        "transform": {
+            "^.+\\.ts?$": "ts-jest"
+        }
+    },
+    "author": "Arnau Sanchez",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tokland/yalens/issues"
+    },
+    "homepage": "https://github.com/tokland/yalens#readme"
 }
