@@ -1,10 +1,10 @@
-/* Generic */
+/* Generic helper types */
 
 type IsArray<T> = T extends unknown[] ? true : false;
 
 type IsObject<T> = T extends object ? (IsArray<T> extends true ? false : true) : false;
 
-/* Lenses */
+/* Lenses types */
 
 type FnsType = "free" | "object";
 
@@ -36,6 +36,8 @@ type FreeLens<From, To> = Lens<From, To, "free">;
 
 type ObjectLens<From, To> = Lens<From, To, "object">;
 
+/* Private functions */
+
 function composeFns<From, To1, To2>(
     fns1: FnsFree<From, To1>,
     fns2: FnsFree<To1, To2>
@@ -59,6 +61,7 @@ function composeFns<From, To1, To2>(
 
 function buildFns<From, To>(prop_: string | symbol, fns: FnsFree<From, To>) {
     const prop = prop_ as keyof To;
+
     const fnsForObject: FnsFree<To, To[typeof prop]> = {
         get: obj => obj[prop],
         set: (obj, value) => ({ ...obj, [prop]: value }),
@@ -123,4 +126,3 @@ export function compose<From, To1, To2>(
     const composedFns = composeFns(lens1._, lens2._);
     return getFreeLens<From, To2>(composedFns);
 }
-y

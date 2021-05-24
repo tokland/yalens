@@ -21,7 +21,7 @@ const person: Person = {
 };
 
 describe("lenses", () => {
-    describe("on (object lenses)", () => {
+    describe("Object lenses", () => {
         it("should get inner value", () => {
             const streetName = on(person).address.street.name._.get();
             expect(streetName).toEqual("Painters St");
@@ -33,7 +33,7 @@ describe("lenses", () => {
         });
     });
 
-    describe("lens (non-object lens)", () => {
+    describe("Free lenses", () => {
         const streetNameL = lens<Person>().address.street.name;
 
         it("should get inner value", () => {
@@ -47,15 +47,15 @@ describe("lenses", () => {
         });
     });
 
-    describe("compose", () => {
+    describe("lens composition", () => {
         const streetNameL = compose(lens<Person>().address, lens<Address>().street.name);
 
-        it("should get inner value", () => {
+        it("should get inner value of composed lens", () => {
             const streetName = streetNameL._.get(person);
             expect(streetName).toEqual("Painters St");
         });
 
-        it("should set inner value", () => {
+        it("should set inner value of composed lens", () => {
             const person2 = streetNameL._.set(person, "Elm St");
             expect(person2.address.street.name).toEqual("Elm St");
         });

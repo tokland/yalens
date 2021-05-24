@@ -4,7 +4,7 @@ Simple immutable lenses with Typescript support.
 
 ## Motivation
 
-Make functional immutable updates of nested values in objects as simple as a mutable update, with auto-complete support:
+Make functional, immutable updates of nested values of objects as simple as imperative, mutable updates:
 
 ```typescript
 // Imperative, update in-place.
